@@ -5,21 +5,23 @@ public class Controller : MonoBehaviour
 {
 
     private AudioManager AudioManager;
-    public PhysicsMaterial2D bouncyMat, slipperyMat;
+    private Rigidbody2D rb;
 
+
+    [Header("Jump Values")]
     public Vector2 jumpDir;
     public float jumpForce, jumpForceMultiplier, maxJumpForce, minJumpForce;
 
-
+    [Header("Ground Check Variables")]
     [SerializeField] private Canvas forceIndicatorCanvas;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundCheckLayerMask;
     [SerializeField] private bool isGrounded;
 
+    [Header("Physics Materials 2D")]
+    public PhysicsMaterial2D bouncyMat, slipperyMat;
 
-
-    private Rigidbody2D rb;
 
     private void Awake()
     {
@@ -76,13 +78,16 @@ public class Controller : MonoBehaviour
 
             Vector2 mousePositionOnScreen = Input.mousePosition; //get mouse position on screen
 
+            
             if (mousePositionOnScreen.x < Screen.width / 2f)  //check on which side mouse was pressed and change Jump Direction Accordingly
             {
                 jumpDir.x = -Mathf.Abs(jumpDir.x);
+      
             }
             else
             {
                 jumpDir.x = Mathf.Abs(jumpDir.x);
+    
             }
 
 

@@ -2143,7 +2143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a499d569df8139540bbc555be4d2bdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lavaMoveSpeed: 0.25
+  lavaMoveSpeed: 0.5
+  playerTransform: {fileID: 1334790197}
+  minLavaSpeed: 0.5
+  maxLavaSpeed: 10
 --- !u!1 &208050749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5521,7 +5524,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &474063762
 MonoBehaviour:
@@ -5985,10 +5988,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6204,7 +6207,7 @@ Transform:
   m_GameObject: {fileID: 1334790194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.22, y: -4.38, z: 0}
+  m_LocalPosition: {x: 2.38, y: -4.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6225,9 +6228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6710e3ef5565143b284b02cb21f36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncyMat: {fileID: 6200000, guid: a48d89a7e90edd1419d54aa3fa2da508, type: 2}
-  slipperyMat: {fileID: 6200000, guid: 6af6c78ab1422654eb0e23aa4dbc3d41, type: 2}
-  jumpDir: {x: -7, y: 16}
+  jumpDir: {x: -7, y: 15}
   jumpForce: 0
   jumpForceMultiplier: 1
   maxJumpForce: 1
@@ -6239,6 +6240,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
+  bouncyMat: {fileID: 6200000, guid: a48d89a7e90edd1419d54aa3fa2da508, type: 2}
+  slipperyMat: {fileID: 6200000, guid: 6af6c78ab1422654eb0e23aa4dbc3d41, type: 2}
 --- !u!1 &1636748552
 GameObject:
   m_ObjectHideFlags: 0
@@ -6252,7 +6255,7 @@ GameObject:
   - component: {fileID: 1636748554}
   - component: {fileID: 1636748553}
   m_Layer: 5
-  m_Name: Restart Canvas
+  m_Name: Ingame UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
