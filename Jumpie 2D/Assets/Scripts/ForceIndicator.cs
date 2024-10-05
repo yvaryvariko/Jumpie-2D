@@ -5,7 +5,7 @@ public class ForceIndicator : MonoBehaviour
 {
 
     public Image forceIndicatorImg;
-    [SerializeField] private CharacterController characterController;
+    [SerializeField] private Controller characterController;
 
     void Update()
     {
