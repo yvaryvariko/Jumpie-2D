@@ -16,6 +16,6 @@ public class LavaMove : MonoBehaviour
 
         lavaMoveSpeed = Mathf.Clamp(distance * minLavaSpeed, minLavaSpeed, maxLavaSpeed);
 
-        transform.position = new Vector2(0, transform.position.y + lavaMoveSpeed * Time.deltaTime);
+        transform.position = new Vector2(transform.position.x, transform.position.y + lavaMoveSpeed * Time.deltaTime);
     }
 }
