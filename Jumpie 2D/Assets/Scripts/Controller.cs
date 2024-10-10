@@ -49,12 +49,16 @@ public class Controller : MonoBehaviour
 
         HandleInput();
 
+
+        
+
     }
 
 
 
     void FixedUpdate()
     {
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundCheckLayerMask);
 
         if (isGrounded)
@@ -65,6 +69,7 @@ public class Controller : MonoBehaviour
         {
             rb.sharedMaterial = bouncyMat;
         }
+
 
     }
 
