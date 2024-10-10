@@ -46,6 +46,7 @@ public class Controller : MonoBehaviour
 
     private void Update()
     {
+
         HandleInput();
 
     }
@@ -90,6 +91,7 @@ public class Controller : MonoBehaviour
     
             }
 
+            //jumpDir.Normalize();
 
             jumpForce = Mathf.Clamp(jumpForce + jumpForceMultiplier * Time.deltaTime, minJumpForce, maxJumpForce);  //calculate Jumpforce
 
@@ -115,7 +117,6 @@ public class Controller : MonoBehaviour
     {
         
         AudioManager.Play("Jump");
-        //rb.AddForce(jumpDir * jumpForce, ForceMode2D.Impulse);
         rb.velocity = jumpDir * jumpForce;
         jumpForce = 0f;
         forceIndicatorCanvas.gameObject.SetActive(false);

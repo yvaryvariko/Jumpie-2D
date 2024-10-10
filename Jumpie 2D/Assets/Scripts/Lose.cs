@@ -10,7 +10,6 @@ public class Lose : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("You Lost!");
             FindObjectOfType<AudioManager>().Play("Death");
             Manager.Restart();
         }

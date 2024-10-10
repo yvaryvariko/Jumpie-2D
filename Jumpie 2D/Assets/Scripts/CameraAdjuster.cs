@@ -9,13 +9,10 @@ public class CameraAdjuster : MonoBehaviour
     {
         mainCamera = GetComponent<Camera>();
 
-        // Calculate the current screen's aspect ratio
         float windowAspect = (float)Screen.width / (float)Screen.height;
 
-        // Determine the scaling factor relative to the target aspect ratio
         float scaleHeight = windowAspect / targetAspectRatio;
 
-        // Adjust the orthographic size to maintain horizontal coverage
         mainCamera.orthographicSize = mainCamera.orthographicSize / scaleHeight;
     }
 }

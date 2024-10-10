@@ -11,6 +11,7 @@ public class ForceIndicator : MonoBehaviour
     {
 
         forceIndicatorImg.fillAmount = characterController.jumpForce;
+
     }
 
     private void OnDisable()
