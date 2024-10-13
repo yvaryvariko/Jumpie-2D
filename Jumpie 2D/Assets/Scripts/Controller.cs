@@ -9,8 +9,8 @@ public class Controller : MonoBehaviour
 
 
     [Header("Jump Values")]
-    public Vector2 jumpDir;
-    public float jumpForce, jumpForceMultiplier, maxJumpForce, minJumpForce;
+    [SerializeField] public Vector2 jumpDir;
+    [SerializeField] public float jumpForce, jumpForceMultiplier, maxJumpForce, minJumpForce;
 
     [Header("Ground Check Variables")]
     [SerializeField] private Canvas forceIndicatorCanvas;
@@ -20,23 +20,13 @@ public class Controller : MonoBehaviour
     [SerializeField] private bool isGrounded;
 
     [Header("Physics Materials 2D")]
-    public PhysicsMaterial2D bouncyMat, slipperyMat;
-
-
-    private void Awake()
-    {
-
-    }
-
-
+    [SerializeField] private PhysicsMaterial2D bouncyMat, slipperyMat;
 
 
     void Start()
     {
         jumpForce = 0;
-        rb = GetComponent<Rigidbody2D>();
-        Application.targetFrameRate = 60;
-        forceIndicatorCanvas.gameObject.SetActive(false);
+        rb = GetComponent<Rigidbody2D>();       
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         AudioManager = FindObjectOfType<AudioManager>();
 
@@ -47,10 +37,7 @@ public class Controller : MonoBehaviour
     private void Update()
     {
 
-        HandleInput();
-
-
-        
+        HandleInput();   
 
     }
 
@@ -60,6 +47,7 @@ public class Controller : MonoBehaviour
     {
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundCheckLayerMask);
+        
 
         if (isGrounded)
         {
@@ -71,6 +59,10 @@ public class Controller : MonoBehaviour
         }
 
 
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 
 
